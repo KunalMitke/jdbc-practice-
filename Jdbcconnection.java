@@ -18,7 +18,7 @@ public class Jdbcconnection
             System.out.println(" 5 : EXIT ");
 
         Scanner sc = new Scanner ( System.in );
-        System.out.println("enter your choice");
+        System.out.print("enter your choice");
         int ch = sc.nextInt();
           try{
               switch(ch)
@@ -28,7 +28,7 @@ public class Jdbcconnection
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery("SELECT * FROM students");
                  while (rs.next()) {
-                System.out.println(rs.getInt("id") + " - " + rs.getString("name")+ " - " + rs.getInt("age") + " - " + rs.getString("course"));
+                System.out.println("id" + rs.getInt("id") + " - " + rs.getString("name")+ " - " + rs.getInt("age") + " - " + rs.getString("course"));
              
                  }
                  break;
@@ -36,7 +36,7 @@ public class Jdbcconnection
           
                    String sql = "insert into students (id ,name ,age ,course) VALUES (?,?,?,?)";
                     PreparedStatement st=conn.prepareStatement(sql);
-                      st.setInt(1,1);
+                      st.setInt(1,14);
                       st.setString(2,"SSA");
                       st.setInt(3, 22);
                       st.setString(4, "sql");
@@ -54,7 +54,7 @@ public class Jdbcconnection
                    PreparedStatement pstmt = conn.prepareStatement(query);
                    pstmt.setString(1, "KUNAL");
                    pstmt.setInt(2, 24);
-                   pstmt.setString(3,"java" );
+                   pstmt.setString(3,"c++" );
                    pstmt.setInt(4, 1 );
                
                    int updatedview = pstmt.executeUpdate();
