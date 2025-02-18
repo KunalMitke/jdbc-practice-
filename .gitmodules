@@ -1,0 +1,3 @@
+[submodule "New-Connection"]
+	path = New-Connection
+	url = https://github.com/KunalMitke/New-JDBC-Connection.git
